@@ -1,16 +1,18 @@
 import logo from '../../assets/images/logo.png'
 
-import { Description, HeroBar, HeroContainer, Logo } from './styles'
+import { Description, HeroPage } from './styles'
+import { ContainerCenter } from '../../styles/container'
+import Logo from '../../styles/logo'
 
 const Hero = () => (
-  <HeroBar>
-    <HeroContainer>
+  <HeroPage>
+    <ContainerCenter>
       <Logo src={logo} alt="Logo efood" />
       <Description>
         Viva experiências gastronômicas no conforto da sua casa
       </Description>
-    </HeroContainer>
-  </HeroBar>
+    </ContainerCenter>
+  </HeroPage>
 )
 
 export default Hero

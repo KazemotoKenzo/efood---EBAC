@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from 'styled-components'
 import colors from './colors'
 
 const GlobalCSS = createGlobalStyle`
@@ -7,17 +7,14 @@ const GlobalCSS = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
     font-family: Roboto, san-serif;
+    list-style: none;
+    text-decoration: none;
   }
 
   body {
-    background-color: ${colors._background};
+    background-color: ${colors._textSecundary};
     color: ${colors._textPrimary};
   }
 `
 
-export const Container = styled.div`
-  max-width: 1024px;
-  width: 100%;
-  margin: 0 auto;
-`
 export default GlobalCSS
