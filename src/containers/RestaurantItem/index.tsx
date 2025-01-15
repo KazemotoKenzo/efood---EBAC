@@ -1,5 +1,3 @@
-import restaurat from '../../assets/images/restaurants/hioki_sushi.png'
-
 import {
   Categories,
   Category,
@@ -12,28 +10,38 @@ import {
   Image
 } from './styles'
 
-const RestaurantItem = () => (
+type Props = {
+  _title: string
+  _category: string
+  _description: string
+  _image: string
+  _rating: number
+}
+
+const RestaurantItem = ({
+  _title,
+  _category,
+  _description,
+  _image,
+  _rating
+}: Props) => (
   <>
     <Card>
-      <Image src={restaurat} />
+      <Image src={_image} alt={_title} />
       <Categories>
         <Category>Destaque da semana</Category>
-        <Category>Japonesa</Category>
+        <Category>{_category}</Category>
       </Categories>
     </Card>
     <Tag>
       <Space>
-        <h3>Hioki Sushi</h3>
+        <h3>{_title}</h3>
         <Rating>
-          <h3>4.9</h3>
+          <h3>{_rating}</h3>
           <Star className="bi bi-star-fill"></Star>
         </Rating>
       </Space>
-      <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo laborum
-        cum, ipsam excepturi nam, quisquam quia quibusdam in quasi optio error
-        alias, sunt inventore soluta id. Expedita dicta voluptatum dolore!
-      </p>
+      <p>{_description}</p>
       <MoreLink to="/perfil">Saiba Mais</MoreLink>
     </Tag>
   </>
