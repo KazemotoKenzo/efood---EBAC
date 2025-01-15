@@ -1,6 +1,6 @@
 import Header from '../containers/Header'
 import RestaurantPage from '../components/RestaurantPage'
-import Banner from '../containers/RestaurantProfile'
+import Banner from '../components/Banner'
 
 const Profile = () => (
   <>

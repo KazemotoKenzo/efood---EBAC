@@ -1,10 +1,23 @@
 import styled from 'styled-components'
 
 export const RestaurantProfile = styled.div`
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   position: relative;
   height: 280px;
-  background-color: #ddd;
+  width: 100%;
   color: #fff;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
 `
 
 export const RestaurantCategory = styled.h2`

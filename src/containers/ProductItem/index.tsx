@@ -1,8 +1,16 @@
-import { AddProduct, ProductDescription, ProductTitle } from './styles'
+import product from '../../assets/images/products/pizza_margueritta.png'
+
+import {
+  AddProduct,
+  ProductDescription,
+  ProductTitle,
+  ProductImage
+} from './styles'
 
 const ProductItem = () => {
   return (
     <>
+      <ProductImage src={product} />
       <ProductTitle>Pizza Marguerita</ProductTitle>
       <ProductDescription>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis esse

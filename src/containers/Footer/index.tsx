@@ -1,7 +1,7 @@
 import logo from '../../assets/images/logo.png'
-import facebook from '../../assets/images/facebook_icon.png'
-import twitter from '../../assets/images/twitter_icon.png'
-import instagram from '../../assets/images/instagram_icon.png'
+import facebook from '../../assets/images/icons/facebook_icon.png'
+import twitter from '../../assets/images/icons/twitter_icon.png'
+import instagram from '../../assets/images/icons/instagram_icon.png'
 
 import { ContainerCenter } from '../../styles/container'
 import Logo from '../../styles/logo'

@@ -2,10 +2,14 @@ import { Link } from 'react-router-dom'
 import colors from '../../styles/colors'
 import styled from 'styled-components'
 
-export const Image = styled.div`
+export const Card = styled.div`
   position: relative;
   height: 218px;
-  background-color: #ddd;
+`
+
+export const Image = styled.img`
+  position: absolute;
+  max-width: 100%;
 `
 
 export const Categories = styled.ul`

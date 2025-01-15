@@ -1,6 +1,10 @@
 import styled from 'styled-components'
 import colors from '../../styles/colors'
 
+export const ProductImage = styled.img`
+  max-width: 100%;
+`
+
 export const ProductTitle = styled.h3`
   margin-bottom: 8px;
 `

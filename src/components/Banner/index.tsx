@@ -1,3 +1,5 @@
+import restaurat from '../../assets/images/restaurants/la_douce_vita_trattoria.png'
+
 import Container from '../../styles/container'
 import {
   RestaurantCategory,
@@ -7,7 +9,7 @@ import {
 
 const Banner = () => {
   return (
-    <RestaurantProfile>
+    <RestaurantProfile style={{ backgroundImage: `url('${restaurat}')` }}>
       <Container>
         <RestaurantCategory>Italian</RestaurantCategory>
         <RestaurantTitle>La Dolce Vita Trattoria</RestaurantTitle>

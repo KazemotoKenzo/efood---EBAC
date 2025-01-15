@@ -1,3 +1,5 @@
+import restaurat from '../../assets/images/restaurants/hioki_sushi.png'
+
 import {
   Categories,
   Category,
@@ -6,17 +8,19 @@ import {
   Space,
   Star,
   Tag,
+  Card,
   Image
 } from './styles'
 
 const RestaurantItem = () => (
   <>
-    <Image>
+    <Card>
+      <Image src={restaurat} />
       <Categories>
         <Category>Destaque da semana</Category>
         <Category>Japonesa</Category>
       </Categories>
-    </Image>
+    </Card>
     <Tag>
       <Space>
         <h3>Hioki Sushi</h3>
