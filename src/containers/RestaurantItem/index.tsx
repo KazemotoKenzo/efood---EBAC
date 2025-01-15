@@ -30,7 +30,7 @@ const RestaurantItem = () => (
         cum, ipsam excepturi nam, quisquam quia quibusdam in quasi optio error
         alias, sunt inventore soluta id. Expedita dicta voluptatum dolore!
       </p>
-      <MoreLink href="#">Saiba Mais</MoreLink>
+      <MoreLink to="/perfil">Saiba Mais</MoreLink>
     </Tag>
   </>
 )

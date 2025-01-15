@@ -1,6 +1,8 @@
+import { Link } from 'react-router-dom'
 import utensils from '../../assets/images/utensils.png'
 
 import styled from 'styled-components'
+import colors from '../../styles/colors'
 
 export const HeaderBar = styled.header`
   background-image: url('${utensils}');
@@ -20,11 +22,13 @@ export const HeaderContainer = styled.div`
   font-size: 18px;
 `
 
-export const Left = styled.a`
+export const Left = styled(Link)`
   position: absolute;
+  color: ${colors._primary};
   left: 0;
 `
-export const Right = styled.a`
+export const Right = styled(Link)`
   position: absolute;
+  color: ${colors._primary};
   right: 0;
 `

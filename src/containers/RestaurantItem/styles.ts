@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import colors from '../../styles/colors'
 import styled from 'styled-components'
 
@@ -46,7 +47,7 @@ export const Star = styled.i`
   margin-left: 8px;
 `
 
-export const MoreLink = styled.a`
+export const MoreLink = styled(Link)`
   color: ${colors._secundary};
   background-color: ${colors._primary};
   font-weight: bold;

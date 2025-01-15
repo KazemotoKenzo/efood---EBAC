@@ -6,9 +6,9 @@ import { HeaderBar, HeaderContainer, Left, Right } from './styles'
 const Header = () => (
   <HeaderBar>
     <HeaderContainer>
-      <Left>Retaurantes</Left>
+      <Left to="/">Retaurantes</Left>
       <Logo src={logo} />
-      <Right>0 produto(s) no carrinho</Right>
+      <Right to="#">0 produto(s) no carrinho</Right>
     </HeaderContainer>
   </HeaderBar>
 )
