@@ -12,6 +12,6 @@ export const RestList = styled.ul`
 
   li {
     margin-bottom: 48px;
-    border: 1px solid ${colors._textPrimary};
+    border: 1px solid ${colors._primary};
   }
 `

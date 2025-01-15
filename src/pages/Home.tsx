@@ -1,12 +1,10 @@
-import Footer from '../components/Footer'
-import Hero from '../components/Hero'
+import Hero from '../containers/Hero'
 import Restaurants from '../components/Restaurants'
 
 const Home = () => (
   <>
     <Hero />
     <Restaurants />
-    <Footer />
   </>
 )
 

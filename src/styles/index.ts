@@ -12,8 +12,8 @@ const GlobalCSS = createGlobalStyle`
   }
 
   body {
-    background-color: ${colors._textSecundary};
-    color: ${colors._textPrimary};
+    background-color: ${colors._secundary};
+    color: ${colors._primary};
   }
 `
 

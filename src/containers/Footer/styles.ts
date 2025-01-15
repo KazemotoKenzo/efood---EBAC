@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import colors from '../../styles/colors'
 
 export const FooterSide = styled.footer`
-  background-color: ${colors._textSecundary};
+  background-color: ${colors._secundary};
 `
 
 export const SocialLinks = styled.ul`

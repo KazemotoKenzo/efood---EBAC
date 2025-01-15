@@ -15,8 +15,8 @@ export const Categories = styled.ul`
 `
 
 export const Category = styled.li`
-  background-color: ${colors._textPrimary};
-  color: ${colors._textSecundary};
+  background-color: ${colors._primary};
+  color: ${colors._secundary};
   margin-left: 8px;
   padding: 6px 4px;
   font-size: 12px;
@@ -46,13 +46,12 @@ export const Star = styled.i`
   margin-left: 8px;
 `
 
-export const MoreLink = styled.button`
-  color: ${colors._textSecundary};
-  background-color: ${colors._textPrimary};
+export const MoreLink = styled.a`
+  color: ${colors._secundary};
+  background-color: ${colors._primary};
   font-weight: bold;
   font-size: 1em;
   padding: 4px 6px;
   margin-top: 16px;
-  border: none;
-  cursor: pointer;
+  display: inline-block;
 `
