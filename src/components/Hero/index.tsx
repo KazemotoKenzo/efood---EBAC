@@ -1,16 +1,16 @@
 import logo from '../../assets/images/logo.png'
 
-import { Description, HeaderBar, HeaderContainer, Logo } from './styles'
+import { Description, HeroBar, HeroContainer, Logo } from './styles'
 
-const Header = () => (
-  <HeaderBar>
-    <HeaderContainer>
+const Hero = () => (
+  <HeroBar>
+    <HeroContainer>
       <Logo src={logo} alt="Logo efood" />
       <Description>
         Viva experiências gastronômicas no conforto da sua casa
       </Description>
-    </HeaderContainer>
-  </HeaderBar>
+    </HeroContainer>
+  </HeroBar>
 )
 
-export default Header
+export default Hero

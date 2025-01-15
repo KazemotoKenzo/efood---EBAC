@@ -2,13 +2,13 @@ import styled from 'styled-components'
 import colors from '../../styles/colors'
 import { Container } from '../../styles'
 
-export const HeaderContainer = styled(Container)`
+export const HeroContainer = styled(Container)`
   display: flex;
   flex-direction: column;
   align-items: center;
 `
 
-export const HeaderBar = styled.header`
+export const HeroBar = styled.header`
   background-color: ${colors._textSecundary};
   padding: 40px 0;
 `
