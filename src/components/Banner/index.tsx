@@ -1,5 +1,4 @@
-import restaurat from '../../assets/images/restaurants/la_douce_vita_trattoria.png'
-
+import RestaurantModel from '../../models/RestaurantModel'
 import Container from '../../styles/container'
 import {
   RestaurantCategory,
@@ -7,9 +6,15 @@ import {
   RestaurantTitle
 } from './styles'
 
-const Banner = () => {
+type Props = {
+  restaurant: RestaurantModel
+}
+
+const Banner = ({ restaurant }: Props) => {
   return (
-    <RestaurantProfile style={{ backgroundImage: `url('${restaurat}')` }}>
+    <RestaurantProfile
+      style={{ backgroundImage: `url('${restaurant.image}')` }}
+    >
       <Container>
         <RestaurantCategory>Italian</RestaurantCategory>
         <RestaurantTitle>La Dolce Vita Trattoria</RestaurantTitle>
