@@ -76,7 +76,7 @@ const hightlight: RestaurantModel[] = [
   }
 ]
 
-const restaurant = hightlight.find((r) => r.id === 2)
+const restaurant = hightlight.find((r) => r.id === 1)
 
 const Profile = () => {
   if (!restaurant) {

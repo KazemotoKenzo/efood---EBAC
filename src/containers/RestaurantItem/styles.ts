@@ -9,7 +9,8 @@ export const Card = styled.div`
 
 export const Image = styled.img`
   position: absolute;
-  max-width: 100%;
+  width: 100%;
+  height: 100%;
 `
 
 export const Categories = styled.ul`

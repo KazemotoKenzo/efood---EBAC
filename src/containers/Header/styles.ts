@@ -20,15 +20,30 @@ export const HeaderContainer = styled.div`
   align-items: center;
   font-weight: bold;
   font-size: 18px;
+
+  @media (max-width: 625px) {
+    display: block;
+    text-align: center;
+  }
 `
 
 export const Left = styled(Link)`
   position: absolute;
   color: ${colors._primary};
   left: 0;
+
+  @media (max-width: 625px) {
+    position: static;
+    display: block;
+  }
 `
 export const Right = styled(Link)`
   position: absolute;
   color: ${colors._primary};
   right: 0;
+
+  @media (max-width: 625px) {
+    position: static;
+    display: block;
+  }
 `

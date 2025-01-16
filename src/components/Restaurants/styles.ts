@@ -14,4 +14,10 @@ export const RestList = styled.ul`
     margin-bottom: 48px;
     border: 1px solid ${colors._primary};
   }
+
+  @media (max-width: 768px) {
+    display: block;
+    max-width: 500px;
+    margin: 0 auto;
+  }
 `

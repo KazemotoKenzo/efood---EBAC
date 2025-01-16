@@ -16,4 +16,13 @@ export const ProductList = styled.ul`
     padding: 8px;
     margin-bottom: 32px;
   }
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2.34%;
+  }
+
+  @media (max-width: 426px) {
+    display: block;
+  }
 `
