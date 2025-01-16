@@ -7,65 +7,65 @@ import la_dolce_vita from '../assets/images/restaurants/la_douce_vita_trattoria.
 
 const hightlight: RestaurantModel[] = [
   {
-    _id: 1,
-    _title: 'Hioki Sushi',
-    _category: 'Japonesa',
-    _rating: 4.9,
-    _description:
+    id: 1,
+    title: 'Hioki Sushi',
+    category: 'Japonesa',
+    rating: 4.9,
+    description:
       'Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida.Experimente o Japão sem sair do lar com nosso delivery!',
-    _image: hioki_sushi
+    image: hioki_sushi
   },
   {
-    _id: 2,
-    _title: 'La Dolce Vita Trattoria',
-    _category: 'Italiana',
-    _rating: 4.6,
-    _description:
+    id: 2,
+    title: 'La Dolce Vita Trattoria',
+    category: 'Italiana',
+    rating: 4.6,
+    description:
       'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
-    _image: la_dolce_vita
+    image: la_dolce_vita
   },
   {
-    _id: 3,
-    _title: 'Hioki Sushi',
-    _category: 'Japonesa',
-    _rating: 4.9,
-    _description:
+    id: 3,
+    title: 'Hioki Sushi',
+    category: 'Japonesa',
+    rating: 4.9,
+    description:
       'Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida.Experimente o Japão sem sair do lar com nosso delivery!',
-    _image: hioki_sushi
+    image: hioki_sushi
   },
   {
-    _id: 4,
-    _title: 'Hioki Sushi',
-    _category: 'Japonesa',
-    _rating: 4.9,
-    _description:
+    id: 4,
+    title: 'Hioki Sushi',
+    category: 'Japonesa',
+    rating: 4.9,
+    description:
       'Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida.Experimente o Japão sem sair do lar com nosso delivery!',
-    _image: hioki_sushi
+    image: hioki_sushi
   },
   {
-    _id: 5,
-    _title: 'La Dolce Vita Trattoria',
-    _category: 'Italiana',
-    _rating: 4.6,
-    _description:
+    id: 5,
+    title: 'La Dolce Vita Trattoria',
+    category: 'Italiana',
+    rating: 4.6,
+    description:
       'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
-    _image: la_dolce_vita
+    image: la_dolce_vita
   },
   {
-    _id: 6,
-    _title: 'La Dolce Vita Trattoria',
-    _category: 'Italiana',
-    _rating: 4.6,
-    _description:
+    id: 6,
+    title: 'La Dolce Vita Trattoria',
+    category: 'Italiana',
+    rating: 4.6,
+    description:
       'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
-    _image: la_dolce_vita
+    image: la_dolce_vita
   }
 ]
 
 const Home = () => (
   <>
     <Hero />
-    <Restaurants _restaurant={hightlight} />
+    <Restaurants restaurant={hightlight} />
   </>
 )
 

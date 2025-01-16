@@ -5,22 +5,22 @@ import RestaurantItem from '../../containers/RestaurantItem'
 import { RestList, RestSection } from './styles'
 
 type Props = {
-  _restaurant: RestaurantModel[]
+  restaurant: RestaurantModel[]
 }
 
-const Restaurants = ({ _restaurant }: Props) => {
+const Restaurants = ({ restaurant }: Props) => {
   return (
     <RestSection>
       <Container>
         <RestList>
-          {_restaurant.map((r) => (
-            <li key={r._id}>
+          {restaurant.map((r) => (
+            <li key={r.id}>
               <RestaurantItem
-                _title={r._title}
-                _category={r._category}
-                _description={r._description}
-                _image={r._image}
-                _rating={r._rating}
+                title={r.title}
+                category={r.category}
+                description={r.description}
+                image={r.image}
+                rating={r.rating}
               />
             </li>
           ))}

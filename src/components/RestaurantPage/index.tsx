@@ -1,30 +1,27 @@
+import ProductModel from '../../models/ProductModel'
+
 import ProductItem from '../../containers/ProductItem'
 import Container from '../../styles/container'
 import { ProductList, RestaurantSection } from './styles'
 
-const RestaurantPage = () => {
+type Props = {
+  product: ProductModel[]
+}
+
+const RestaurantPage = ({ product }: Props) => {
   return (
     <RestaurantSection>
       <Container>
         <ProductList>
-          <li>
-            <ProductItem />
-          </li>
-          <li>
-            <ProductItem />
-          </li>
-          <li>
-            <ProductItem />
-          </li>
-          <li>
-            <ProductItem />
-          </li>
-          <li>
-            <ProductItem />
-          </li>
-          <li>
-            <ProductItem />
-          </li>
+          {product.map((p) => (
+            <li key={p.id}>
+              <ProductItem
+                title={p.title}
+                description={p.description}
+                image={p.image}
+              />
+            </li>
+          ))}
         </ProductList>
       </Container>
     </RestaurantSection>

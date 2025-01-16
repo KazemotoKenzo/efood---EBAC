@@ -1,26 +1,28 @@
+import ProductModel from './ProductModel'
+
 class RestaurantModel {
-  _title: string
-  _description: string
-  _image: string
-  _category: string
-  _rating: number
-  _products?: object
-  _id: number
+  title: string
+  description: string
+  image: string
+  category: string
+  rating: number
+  products?: ProductModel[]
+  id: number
 
   constructor(
-    _id: number,
-    _title: string,
-    _description: string,
-    _image: string,
-    _category: string,
-    _rating: number
+    id: number,
+    title: string,
+    description: string,
+    image: string,
+    category: string,
+    rating: number
   ) {
-    this._id = _id
-    this._title = _title
-    this._description = _description
-    this._image = _image
-    this._category = _category
-    this._rating = _rating
+    this.id = id
+    this.title = title
+    this.description = description
+    this.image = image
+    this.category = category
+    this.rating = rating
   }
 }
 

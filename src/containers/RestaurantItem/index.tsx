@@ -11,37 +11,37 @@ import {
 } from './styles'
 
 type Props = {
-  _title: string
-  _category: string
-  _description: string
-  _image: string
-  _rating: number
+  title: string
+  category: string
+  description: string
+  image: string
+  rating: number
 }
 
 const RestaurantItem = ({
-  _title,
-  _category,
-  _description,
-  _image,
-  _rating
+  title,
+  category,
+  description,
+  image,
+  rating
 }: Props) => (
   <>
     <Card>
-      <Image src={_image} alt={_title} />
+      <Image src={image} alt={title} />
       <Categories>
         <Category>Destaque da semana</Category>
-        <Category>{_category}</Category>
+        <Category>{category}</Category>
       </Categories>
     </Card>
     <Tag>
       <Space>
-        <h3>{_title}</h3>
+        <h3>{title}</h3>
         <Rating>
-          <h3>{_rating}</h3>
+          <h3>{rating}</h3>
           <Star className="bi bi-star-fill"></Star>
         </Rating>
       </Space>
-      <p>{_description}</p>
+      <p>{description}</p>
       <MoreLink to="/perfil">Saiba Mais</MoreLink>
     </Tag>
   </>
