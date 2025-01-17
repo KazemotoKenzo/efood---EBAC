@@ -1,4 +1,5 @@
 import {
+  RestaurantItemView,
   Categories,
   Category,
   MoreLink,
@@ -25,7 +26,7 @@ const RestaurantItem = ({
   image,
   rating
 }: Props) => (
-  <>
+  <RestaurantItemView>
     <Card>
       <Image src={image} alt={title} />
       <Categories>
@@ -44,7 +45,7 @@ const RestaurantItem = ({
       <p>{description}</p>
       <MoreLink to="/perfil">Saiba Mais</MoreLink>
     </Tag>
-  </>
+  </RestaurantItemView>
 )
 
 export default RestaurantItem

@@ -14,15 +14,14 @@ const Restaurants = ({ restaurant }: Props) => {
       <Container>
         <RestList>
           {restaurant.map((r) => (
-            <li key={r.id}>
-              <RestaurantItem
-                title={r.title}
-                category={r.category}
-                description={r.description}
-                image={r.image}
-                rating={r.rating}
-              />
-            </li>
+            <RestaurantItem
+              key={r.id}
+              title={r.title}
+              category={r.category}
+              description={r.description}
+              image={r.image}
+              rating={r.rating}
+            />
           ))}
         </RestList>
       </Container>

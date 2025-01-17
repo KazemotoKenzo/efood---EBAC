@@ -7,6 +7,11 @@ export const Card = styled.div`
   height: 218px;
 `
 
+export const RestaurantItemView = styled.li`
+  background-color: #fff;
+  border: 1px solid ${colors._primary};
+  margin-bottom: 48px;
+`
 export const Image = styled.img`
   position: absolute;
   width: 100%;
