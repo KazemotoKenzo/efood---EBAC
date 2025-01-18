@@ -8,13 +8,13 @@ import Footer from './containers/Footer'
 
 function App() {
   return (
-    <BrowserRouter>
-      <Provider store={store}>
+    <Provider store={store}>
+      <BrowserRouter>
         <GlobalCSS />
         <Rotas />
         <Footer />
-      </Provider>
-    </BrowserRouter>
+      </BrowserRouter>
+    </Provider>
   )
 }
 

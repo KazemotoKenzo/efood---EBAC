@@ -22,14 +22,8 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     add: (state, action: PayloadAction<Product>) => {
-      const product = action.payload
-
-      if (state.itens.find((p) => p.id === product.id)) {
-        alert('Este item já foi adicionado')
-      } else {
-        alert(`${product.nome} adicionado no carrinho!`)
-        state.itens.push(product)
-      }
+      alert(`${action.payload.nome} adicionado no carrinho!`)
+      state.itens.push(action.payload)
     },
     reset: (state) => {
       alert('Carrinho resetado')
