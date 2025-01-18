@@ -6,6 +6,8 @@ import Container from '../../styles/container'
 import { Modal, ProductList, RestaurantSection, ModalContent } from './styles'
 
 import close from '../../assets/images/close 1.png'
+import { useDispatch } from 'react-redux'
+import { add } from '../../store/reducers/cart'
 
 type Props = {
   product: ProductModel[]
@@ -21,7 +23,9 @@ const RestaurantPage = ({ product }: Props) => {
     description: '',
     id: 0,
     image: '',
-    title: ''
+    title: '',
+    prices: 0,
+    serves: [0]
   })
 
   const closeModal = () => {
@@ -30,9 +34,26 @@ const RestaurantPage = ({ product }: Props) => {
       description: '',
       image: '',
       title: '',
-      id: 0
+      id: 0,
+      prices: 0,
+      serves: [0]
     })
   }
+
+  const priceFormat = () => {
+    return new Intl.NumberFormat('pt-BR', {
+      style: 'currency',
+      currency: 'BRL'
+    }).format(modal.prices)
+  }
+
+  const family = () => {
+    return modal.serves.length > 1
+      ? `de ${modal.serves[0]} a ${modal.serves[1]} pessoas`
+      : `1 pessoa`
+  }
+
+  const dispatch = useDispatch()
 
   return (
     <>
@@ -48,7 +69,9 @@ const RestaurantPage = ({ product }: Props) => {
                     description: p.description,
                     image: p.image,
                     title: p.title,
-                    id: p.id
+                    id: p.id,
+                    prices: p.prices,
+                    serves: p.serves
                   })
                 }}
               >
@@ -74,8 +97,15 @@ const RestaurantPage = ({ product }: Props) => {
               <h4>{modal.title}</h4>
               <p>{modal.description}</p>
 
-              <span>Serve: de 2 a 3 pessoas</span>
-              <button>Adicionar ao carrinho - R$ 60,90</button>
+              <span>Serve: {family()}</span>
+              <button
+                onClick={() => {
+                  dispatch(add(modal))
+                  closeModal()
+                }}
+              >
+                Adicionar ao carrinho - {priceFormat()}
+              </button>
             </div>
           </div>
         </ModalContent>

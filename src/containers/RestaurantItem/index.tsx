@@ -22,26 +22,36 @@ const RestaurantItem = ({
   description,
   image,
   rating
-}: Props) => (
-  <Card>
-    <Categories>
-      {category.map((c) => (
-        <Category key={c}>{c}</Category>
-      ))}
-    </Categories>
-    <Image src={image} alt={title} />
-    <ContainerRes>
-      <Space>
-        <h3>{title}</h3>
-        <Rating>
-          <h3>{rating}</h3>
-          <Star className="bi bi-star-fill"></Star>
-        </Rating>
-      </Space>
-      <DescriptionRes>{description}</DescriptionRes>
-      <MoreLink to={`/perfil/${id}`}>Saiba Mais</MoreLink>
-    </ContainerRes>
-  </Card>
-)
+}: Props) => {
+  const getDescription = (d: string) => {
+    if (d.length > 243) {
+      return d.slice(0, 243) + '...'
+    } else {
+      return d
+    }
+  }
+
+  return (
+    <Card>
+      <Categories>
+        {category.map((c) => (
+          <Category key={c}>{c}</Category>
+        ))}
+      </Categories>
+      <Image src={image} alt={title} />
+      <ContainerRes>
+        <Space>
+          <h3>{title}</h3>
+          <Rating>
+            <h3>{rating}</h3>
+            <Star className="bi bi-star-fill"></Star>
+          </Rating>
+        </Space>
+        <DescriptionRes>{getDescription(description)}</DescriptionRes>
+        <MoreLink to={`/perfil/${id}`}>Saiba Mais</MoreLink>
+      </ContainerRes>
+    </Card>
+  )
+}
 
 export default RestaurantItem

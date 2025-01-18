@@ -10,8 +10,10 @@ export const Card = styled.div`
 `
 
 export const Image = styled.img`
-  max-width: 100%;
+  display: block;
   width: 100%;
+  height: 216px;
+  object-fit: cover;
 `
 
 export const Categories = styled.ul`

@@ -27,21 +27,27 @@ const initialState: RestaurantsState = {
           description:
             'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
           title: 'Yakiniku',
-          image: yakiniku
+          image: yakiniku,
+          prices: 89.9,
+          serves: [1]
         },
         {
           id: 2,
           description:
             'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
           title: 'Yakiniku',
-          image: yakiniku
+          image: yakiniku,
+          prices: 89.9,
+          serves: [1]
         },
         {
           id: 3,
           description:
             'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
           title: 'Yakiniku',
-          image: yakiniku
+          image: yakiniku,
+          prices: 89.9,
+          serves: [1]
         }
       ]
     },
@@ -59,42 +65,54 @@ const initialState: RestaurantsState = {
           description:
             'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
           title: 'Pizza Marguerita',
-          image: pizza_marguerita
+          image: pizza_marguerita,
+          prices: 60.9,
+          serves: [2, 3]
         },
         {
           id: 2,
           description:
             'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
           title: 'Pizza Marguerita',
-          image: pizza_marguerita
+          image: pizza_marguerita,
+          prices: 60.9,
+          serves: [2, 3]
         },
         {
           id: 3,
           description:
             'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
           title: 'Pizza Marguerita',
-          image: pizza_marguerita
+          image: pizza_marguerita,
+          prices: 60.9,
+          serves: [2, 3]
         },
         {
           id: 4,
           description:
             'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
           title: 'Pizza Marguerita',
-          image: pizza_marguerita
+          image: pizza_marguerita,
+          prices: 60.9,
+          serves: [2, 3]
         },
         {
           id: 5,
           description:
             'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
           title: 'Pizza Marguerita',
-          image: pizza_marguerita
+          image: pizza_marguerita,
+          prices: 60.9,
+          serves: [2, 3]
         },
         {
           id: 6,
           description:
             'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
           title: 'Pizza Marguerita',
-          image: pizza_marguerita
+          image: pizza_marguerita,
+          prices: 60.9,
+          serves: [2, 3]
         }
       ]
     },
@@ -112,42 +130,54 @@ const initialState: RestaurantsState = {
           description:
             'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
           title: 'Pizza Marguerita',
-          image: pizza_marguerita
+          image: pizza_marguerita,
+          prices: 60.9,
+          serves: [2, 3]
         },
         {
           id: 2,
           description:
             'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
           title: 'Pizza Marguerita',
-          image: pizza_marguerita
+          image: pizza_marguerita,
+          prices: 60.9,
+          serves: [2, 3]
         },
         {
           id: 3,
           description:
             'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
           title: 'Pizza Marguerita',
-          image: pizza_marguerita
+          image: pizza_marguerita,
+          prices: 60.9,
+          serves: [2, 3]
         },
         {
           id: 4,
           description:
             'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
           title: 'Pizza Marguerita',
-          image: pizza_marguerita
+          image: pizza_marguerita,
+          prices: 60.9,
+          serves: [2, 3]
         },
         {
           id: 5,
           description:
             'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
           title: 'Pizza Marguerita',
-          image: pizza_marguerita
+          image: pizza_marguerita,
+          prices: 60.9,
+          serves: [2, 3]
         },
         {
           id: 6,
           description:
             'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
           title: 'Pizza Marguerita',
-          image: pizza_marguerita
+          image: pizza_marguerita,
+          prices: 60.9,
+          serves: [2, 3]
         }
       ]
     },
@@ -165,42 +195,54 @@ const initialState: RestaurantsState = {
           description:
             'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
           title: 'Pizza Marguerita',
-          image: pizza_marguerita
+          image: pizza_marguerita,
+          prices: 60.9,
+          serves: [2, 3]
         },
         {
           id: 2,
           description:
             'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
           title: 'Pizza Marguerita',
-          image: pizza_marguerita
+          image: pizza_marguerita,
+          prices: 60.9,
+          serves: [2, 3]
         },
         {
           id: 3,
           description:
             'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
           title: 'Pizza Marguerita',
-          image: pizza_marguerita
+          image: pizza_marguerita,
+          prices: 60.9,
+          serves: [2, 3]
         },
         {
           id: 4,
           description:
             'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
           title: 'Pizza Marguerita',
-          image: pizza_marguerita
+          image: pizza_marguerita,
+          prices: 60.9,
+          serves: [2, 3]
         },
         {
           id: 5,
           description:
             'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
           title: 'Pizza Marguerita',
-          image: pizza_marguerita
+          image: pizza_marguerita,
+          prices: 60.9,
+          serves: [2, 3]
         },
         {
           id: 6,
           description:
             'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
           title: 'Pizza Marguerita',
-          image: pizza_marguerita
+          image: pizza_marguerita,
+          prices: 60.9,
+          serves: [2, 3]
         }
       ]
     },
@@ -218,42 +260,54 @@ const initialState: RestaurantsState = {
           description:
             'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
           title: 'Pizza Marguerita',
-          image: pizza_marguerita
+          image: pizza_marguerita,
+          prices: 60.9,
+          serves: [2, 3]
         },
         {
           id: 2,
           description:
             'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
           title: 'Pizza Marguerita',
-          image: pizza_marguerita
+          image: pizza_marguerita,
+          prices: 60.9,
+          serves: [2, 3]
         },
         {
           id: 3,
           description:
             'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
           title: 'Pizza Marguerita',
-          image: pizza_marguerita
+          image: pizza_marguerita,
+          prices: 60.9,
+          serves: [2, 3]
         },
         {
           id: 4,
           description:
             'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
           title: 'Pizza Marguerita',
-          image: pizza_marguerita
+          image: pizza_marguerita,
+          prices: 60.9,
+          serves: [2, 3]
         },
         {
           id: 5,
           description:
             'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
           title: 'Pizza Marguerita',
-          image: pizza_marguerita
+          image: pizza_marguerita,
+          prices: 60.9,
+          serves: [2, 3]
         },
         {
           id: 6,
           description:
             'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
           title: 'Pizza Marguerita',
-          image: pizza_marguerita
+          image: pizza_marguerita,
+          prices: 60.9,
+          serves: [2, 3]
         }
       ]
     },
@@ -271,42 +325,54 @@ const initialState: RestaurantsState = {
           description:
             'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
           title: 'Pizza Marguerita',
-          image: pizza_marguerita
+          image: pizza_marguerita,
+          prices: 60.9,
+          serves: [2, 3]
         },
         {
           id: 2,
           description:
             'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
           title: 'Pizza Marguerita',
-          image: pizza_marguerita
+          image: pizza_marguerita,
+          prices: 60.9,
+          serves: [2, 3]
         },
         {
           id: 3,
           description:
             'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
           title: 'Pizza Marguerita',
-          image: pizza_marguerita
+          image: pizza_marguerita,
+          prices: 60.9,
+          serves: [2, 3]
         },
         {
           id: 4,
           description:
             'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
           title: 'Pizza Marguerita',
-          image: pizza_marguerita
+          image: pizza_marguerita,
+          prices: 60.9,
+          serves: [2, 3]
         },
         {
           id: 5,
           description:
             'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
           title: 'Pizza Marguerita',
-          image: pizza_marguerita
+          image: pizza_marguerita,
+          prices: 60.9,
+          serves: [2, 3]
         },
         {
           id: 6,
           description:
             'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
           title: 'Pizza Marguerita',
-          image: pizza_marguerita
+          image: pizza_marguerita,
+          prices: 60.9,
+          serves: [2, 3]
         }
       ]
     }
