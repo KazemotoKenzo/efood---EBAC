@@ -1,10 +1,12 @@
 import { useState } from 'react'
+import { useDispatch } from 'react-redux'
 
 import ProductItem from '../../containers/ProductItem'
 import Container from '../../styles/container'
 import { Modal, ProductList, RestaurantSection, ModalContent } from './styles'
 
 import close from '../../assets/images/close 1.png'
+import { add } from '../../store/reducers/cart'
 
 type Props = {
   cardapio: [
@@ -30,6 +32,8 @@ type ModalState = {
 }
 
 const RestaurantPage = ({ cardapio }: Props) => {
+  const dispatch = useDispatch()
+
   const [modal, setModal] = useState<ModalState>({
     isVisible: false,
     descricao: '',
@@ -57,12 +61,6 @@ const RestaurantPage = ({ cardapio }: Props) => {
       style: 'currency',
       currency: 'BRL'
     }).format(modal.preco)
-  }
-
-  const family = () => {
-    return modal.porcao.length > 1
-      ? `de ${modal.porcao[0]} a ${modal.porcao[1]} pessoas`
-      : `1 pessoa`
   }
 
   return (
@@ -107,10 +105,11 @@ const RestaurantPage = ({ cardapio }: Props) => {
               <h4>{modal.nome}</h4>
               <p>{modal.descricao}</p>
 
-              <span>Serve: {family()}</span>
+              <span>Serve: de {modal.porcao}</span>
               <button
                 onClick={() => {
                   closeModal()
+                  dispatch(add(modal))
                 }}
               >
                 Adicionar ao carrinho - {priceFormat()}

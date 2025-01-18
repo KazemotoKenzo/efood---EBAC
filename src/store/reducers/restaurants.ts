@@ -20,10 +20,14 @@ type RestaurantsState = {
       }
     ]
   }[]
+  status: 'idle' | 'loading' | 'succeeded' | 'failed'
+  error: string | null
 }
 
 const initialState: RestaurantsState = {
-  itens: []
+  itens: [],
+  status: 'idle',
+  error: null
 }
 
 export const fetchRestaurants = createAsyncThunk(
@@ -42,9 +46,20 @@ const RestaurantsSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(fetchRestaurants.fulfilled, (state, action) => {
-      state.itens = action.payload
-    })
+    builder
+      .addCase(fetchRestaurants.pending, (state) => {
+        state.status = 'loading'
+      })
+      .addCase(fetchRestaurants.fulfilled, (state, action) => {
+        state.status = 'succeeded'
+        state.itens = action.payload
+        state.error = null
+      })
+      .addCase(fetchRestaurants.rejected, (state, action) => {
+        state.status = 'failed'
+        state.error =
+          action.error.message || 'Falha ao carregar os restaurantes'
+      })
   }
 })
 

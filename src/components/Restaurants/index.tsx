@@ -21,6 +21,7 @@ const Restaurants = () => {
               image={r.capa}
               rating={r.avaliacao}
               id={r.id}
+              destacado={r.destacado}
             />
           ))}
         </RestList>

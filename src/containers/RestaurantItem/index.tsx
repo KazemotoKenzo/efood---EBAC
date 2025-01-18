@@ -1,6 +1,5 @@
 import {
   Categories,
-  Category,
   MoreLink,
   Rating,
   Space,
@@ -18,6 +17,7 @@ type Props = {
   description: string
   image: string
   rating: number
+  destacado: boolean
 }
 
 const RestaurantItem = ({
@@ -26,11 +26,12 @@ const RestaurantItem = ({
   category,
   description,
   image,
-  rating
+  rating,
+  destacado
 }: Props) => {
   const getDescription = (d: string) => {
-    if (d.length > 243) {
-      return d.slice(0, 243) + '...'
+    if (d.length > 290) {
+      return d.slice(0, 290) + '...'
     } else {
       return d
     }
@@ -39,7 +40,8 @@ const RestaurantItem = ({
   return (
     <Card>
       <Categories>
-        <Category>{category}</Category>
+        <li className={destacado ? '' : 'destaqueOff'}>Destaque</li>
+        <li>{category}</li>
       </Categories>
       <Image src={image} alt={title} />
       <ContainerRes>
