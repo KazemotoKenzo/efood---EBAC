@@ -4,18 +4,14 @@ import styled from 'styled-components'
 
 export const Card = styled.div`
   position: relative;
-  height: 218px;
-`
-
-export const RestaurantItemView = styled.li`
-  background-color: #fff;
   border: 1px solid ${colors._primary};
+  background-color: #fff;
   margin-bottom: 48px;
 `
+
 export const Image = styled.img`
-  position: absolute;
+  max-width: 100%;
   width: 100%;
-  height: 100%;
 `
 
 export const Categories = styled.ul`
@@ -32,6 +28,15 @@ export const Category = styled.li`
   padding: 6px 4px;
   font-size: 12px;
   font-weight: bold;
+`
+
+export const ContainerRes = styled.div`
+  padding: 8px;
+  padding-top: 0px;
+`
+
+export const DescriptionRes = styled.p`
+  margin-bottom: 16px;
 `
 
 export const Tag = styled.div`
@@ -63,6 +68,6 @@ export const MoreLink = styled(Link)`
   font-weight: bold;
   font-size: 1em;
   padding: 4px 6px;
-  margin-top: 16px;
   display: inline-block;
+  bottom: 0;
 `

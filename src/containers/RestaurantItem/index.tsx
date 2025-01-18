@@ -1,40 +1,36 @@
+import RestaurantModel from '../../models/RestaurantModel'
+
 import {
-  RestaurantItemView,
   Categories,
   Category,
   MoreLink,
   Rating,
   Space,
   Star,
-  Tag,
+  DescriptionRes,
+  ContainerRes,
   Card,
   Image
 } from './styles'
 
-type Props = {
-  title: string
-  category: string
-  description: string
-  image: string
-  rating: number
-}
+type Props = RestaurantModel
 
 const RestaurantItem = ({
+  id,
   title,
   category,
   description,
   image,
   rating
 }: Props) => (
-  <RestaurantItemView>
-    <Card>
-      <Image src={image} alt={title} />
-      <Categories>
-        <Category>Destaque da semana</Category>
-        <Category>{category}</Category>
-      </Categories>
-    </Card>
-    <Tag>
+  <Card>
+    <Categories>
+      {category.map((c) => (
+        <Category key={c}>{c}</Category>
+      ))}
+    </Categories>
+    <Image src={image} alt={title} />
+    <ContainerRes>
       <Space>
         <h3>{title}</h3>
         <Rating>
@@ -42,10 +38,10 @@ const RestaurantItem = ({
           <Star className="bi bi-star-fill"></Star>
         </Rating>
       </Space>
-      <p>{description}</p>
-      <MoreLink to="/perfil">Saiba Mais</MoreLink>
-    </Tag>
-  </RestaurantItemView>
+      <DescriptionRes>{description}</DescriptionRes>
+      <MoreLink to={`/perfil/${id}`}>Saiba Mais</MoreLink>
+    </ContainerRes>
+  </Card>
 )
 
 export default RestaurantItem

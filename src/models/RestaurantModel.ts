@@ -4,9 +4,9 @@ class RestaurantModel {
   title: string
   description: string
   image: string
-  category: string
+  category: string[]
   rating: number
-  products?: ProductModel[]
+  products: ProductModel[]
   id: number
 
   constructor(
@@ -14,8 +14,9 @@ class RestaurantModel {
     title: string,
     description: string,
     image: string,
-    category: string,
-    rating: number
+    category: string[],
+    rating: number,
+    products: ProductModel[]
   ) {
     this.id = id
     this.title = title
@@ -23,6 +24,7 @@ class RestaurantModel {
     this.image = image
     this.category = category
     this.rating = rating
+    this.products = products
   }
 }
 

@@ -1,92 +1,26 @@
-import ProductModel from '../models/ProductModel'
+import { useSelector } from 'react-redux'
+import { RootReducer } from '../store'
 
 import Header from '../containers/Header'
 import RestaurantPage from '../components/RestaurantPage'
 import Banner from '../components/Banner'
-
-import pizza_marguerita from '../assets/images/products/pizza_margueritta.png'
-import RestaurantModel from '../models/RestaurantModel'
-
-import hioki_sushi from '../assets/images/restaurants/hioki_sushi.png'
-import la_dolce_vita from '../assets/images/restaurants/la_douce_vita_trattoria.png'
-
-const products: ProductModel[] = [
-  {
-    id: 1,
-    description:
-      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-    title: 'Pizza Marguerita',
-    image: pizza_marguerita
-  },
-  {
-    id: 2,
-    description:
-      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-    title: 'Pizza Marguerita',
-    image: pizza_marguerita
-  },
-  {
-    id: 3,
-    description:
-      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-    title: 'Pizza Marguerita',
-    image: pizza_marguerita
-  },
-  {
-    id: 4,
-    description:
-      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-    title: 'Pizza Marguerita',
-    image: pizza_marguerita
-  },
-  {
-    id: 5,
-    description:
-      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-    title: 'Pizza Marguerita',
-    image: pizza_marguerita
-  },
-  {
-    id: 6,
-    description:
-      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-    title: 'Pizza Marguerita',
-    image: pizza_marguerita
-  }
-]
-
-const hightlight: RestaurantModel[] = [
-  {
-    id: 1,
-    title: 'Hioki Sushi',
-    category: 'Japonesa',
-    rating: 4.9,
-    description:
-      'Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida.Experimente o Japão sem sair do lar com nosso delivery!',
-    image: hioki_sushi
-  },
-  {
-    id: 2,
-    title: 'La Dolce Vita Trattoria',
-    category: 'Italiana',
-    rating: 4.6,
-    description:
-      'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
-    image: la_dolce_vita
-  }
-]
-
-const restaurant = hightlight.find((r) => r.id === 1)
+import { useParams } from 'react-router-dom'
 
 const Profile = () => {
+  const { id } = useParams<{ id: string }>()
+  const item = useSelector((state: RootReducer) => state.restaurants.itens)
+
+  const restaurant = item.find((r) => r.id === Number(id))
+
   if (!restaurant) {
     return <p>Restaurante não encontrado</p>
   }
+
   return (
     <>
       <Header />
       <Banner restaurant={restaurant} />
-      <RestaurantPage product={products} />
+      <RestaurantPage product={restaurant.products} />
     </>
   )
 }

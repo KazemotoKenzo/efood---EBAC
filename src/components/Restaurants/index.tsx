@@ -1,19 +1,18 @@
-import RestaurantModel from '../../models/RestaurantModel'
+import { useSelector } from 'react-redux'
+import { RootReducer } from '../../store'
 
 import Container from '../../styles/container'
 import RestaurantItem from '../../containers/RestaurantItem'
 import { RestList, RestSection } from './styles'
 
-type Props = {
-  restaurant: RestaurantModel[]
-}
+const Restaurants = () => {
+  const itens = useSelector((state: RootReducer) => state.restaurants.itens)
 
-const Restaurants = ({ restaurant }: Props) => {
   return (
     <RestSection>
       <Container>
         <RestList>
-          {restaurant.map((r) => (
+          {itens.map((r) => (
             <RestaurantItem
               key={r.id}
               title={r.title}
@@ -21,6 +20,8 @@ const Restaurants = ({ restaurant }: Props) => {
               description={r.description}
               image={r.image}
               rating={r.rating}
+              id={r.id}
+              products={r.products}
             />
           ))}
         </RestList>
