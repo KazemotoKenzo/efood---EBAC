@@ -19,8 +19,12 @@ const Profile = () => {
   return (
     <>
       <Header />
-      <Banner restaurant={restaurant} />
-      <RestaurantPage product={restaurant.products} />
+      <Banner
+        capa={restaurant.capa}
+        tipo={restaurant.tipo}
+        titulo={restaurant.titulo}
+      />
+      <RestaurantPage cardapio={restaurant.cardapio} />
     </>
   )
 }

@@ -1,388 +1,51 @@
-import { createSlice } from '@reduxjs/toolkit'
-import RestaurantModel from '../../models/RestaurantModel'
-
-import hioki_sushi from '../../assets/images/restaurants/hioki_sushi.png'
-import la_dolce_vita from '../../assets/images/restaurants/la_douce_vita_trattoria.png'
-
-import pizza_marguerita from '../../assets/images/products/pizza_margueritta.png'
-import yakiniku from '../../assets/images/products/yakiniku.jpg'
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 
 type RestaurantsState = {
-  itens: RestaurantModel[]
+  itens: {
+    id: number
+    titulo: string
+    destacado: boolean
+    tipo: string
+    avaliacao: number
+    descricao: string
+    capa: string
+    cardapio: [
+      {
+        foto: string
+        preco: number
+        id: number
+        nome: string
+        descricao: string
+        porcao: string
+      }
+    ]
+  }[]
 }
 
 const initialState: RestaurantsState = {
-  itens: [
-    {
-      id: 1,
-      title: 'Hioki Sushi',
-      category: ['Destaque', 'Japonesa'],
-      rating: 4.9,
-      description:
-        'Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida.Experimente o Japão sem sair do lar com nosso delivery!',
-      image: hioki_sushi,
-      products: [
-        {
-          id: 1,
-          description:
-            'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-          title: 'Yakiniku',
-          image: yakiniku,
-          prices: 89.9,
-          serves: [1]
-        },
-        {
-          id: 2,
-          description:
-            'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-          title: 'Yakiniku',
-          image: yakiniku,
-          prices: 89.9,
-          serves: [1]
-        },
-        {
-          id: 3,
-          description:
-            'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-          title: 'Yakiniku',
-          image: yakiniku,
-          prices: 89.9,
-          serves: [1]
-        }
-      ]
-    },
-    {
-      id: 2,
-      title: 'La Dolce Vita Trattoria',
-      category: ['Italiana'],
-      rating: 4.6,
-      description:
-        'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
-      image: la_dolce_vita,
-      products: [
-        {
-          id: 1,
-          description:
-            'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-          title: 'Pizza Marguerita',
-          image: pizza_marguerita,
-          prices: 60.9,
-          serves: [2, 3]
-        },
-        {
-          id: 2,
-          description:
-            'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-          title: 'Pizza Marguerita',
-          image: pizza_marguerita,
-          prices: 60.9,
-          serves: [2, 3]
-        },
-        {
-          id: 3,
-          description:
-            'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-          title: 'Pizza Marguerita',
-          image: pizza_marguerita,
-          prices: 60.9,
-          serves: [2, 3]
-        },
-        {
-          id: 4,
-          description:
-            'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-          title: 'Pizza Marguerita',
-          image: pizza_marguerita,
-          prices: 60.9,
-          serves: [2, 3]
-        },
-        {
-          id: 5,
-          description:
-            'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-          title: 'Pizza Marguerita',
-          image: pizza_marguerita,
-          prices: 60.9,
-          serves: [2, 3]
-        },
-        {
-          id: 6,
-          description:
-            'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-          title: 'Pizza Marguerita',
-          image: pizza_marguerita,
-          prices: 60.9,
-          serves: [2, 3]
-        }
-      ]
-    },
-    {
-      id: 3,
-      title: 'La Dolce Vita Trattoria',
-      category: ['Italiana'],
-      rating: 4.6,
-      description:
-        'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
-      image: la_dolce_vita,
-      products: [
-        {
-          id: 1,
-          description:
-            'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-          title: 'Pizza Marguerita',
-          image: pizza_marguerita,
-          prices: 60.9,
-          serves: [2, 3]
-        },
-        {
-          id: 2,
-          description:
-            'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-          title: 'Pizza Marguerita',
-          image: pizza_marguerita,
-          prices: 60.9,
-          serves: [2, 3]
-        },
-        {
-          id: 3,
-          description:
-            'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-          title: 'Pizza Marguerita',
-          image: pizza_marguerita,
-          prices: 60.9,
-          serves: [2, 3]
-        },
-        {
-          id: 4,
-          description:
-            'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-          title: 'Pizza Marguerita',
-          image: pizza_marguerita,
-          prices: 60.9,
-          serves: [2, 3]
-        },
-        {
-          id: 5,
-          description:
-            'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-          title: 'Pizza Marguerita',
-          image: pizza_marguerita,
-          prices: 60.9,
-          serves: [2, 3]
-        },
-        {
-          id: 6,
-          description:
-            'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-          title: 'Pizza Marguerita',
-          image: pizza_marguerita,
-          prices: 60.9,
-          serves: [2, 3]
-        }
-      ]
-    },
-    {
-      id: 4,
-      title: 'La Dolce Vita Trattoria',
-      category: ['Italiana'],
-      rating: 4.6,
-      description:
-        'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
-      image: la_dolce_vita,
-      products: [
-        {
-          id: 1,
-          description:
-            'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-          title: 'Pizza Marguerita',
-          image: pizza_marguerita,
-          prices: 60.9,
-          serves: [2, 3]
-        },
-        {
-          id: 2,
-          description:
-            'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-          title: 'Pizza Marguerita',
-          image: pizza_marguerita,
-          prices: 60.9,
-          serves: [2, 3]
-        },
-        {
-          id: 3,
-          description:
-            'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-          title: 'Pizza Marguerita',
-          image: pizza_marguerita,
-          prices: 60.9,
-          serves: [2, 3]
-        },
-        {
-          id: 4,
-          description:
-            'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-          title: 'Pizza Marguerita',
-          image: pizza_marguerita,
-          prices: 60.9,
-          serves: [2, 3]
-        },
-        {
-          id: 5,
-          description:
-            'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-          title: 'Pizza Marguerita',
-          image: pizza_marguerita,
-          prices: 60.9,
-          serves: [2, 3]
-        },
-        {
-          id: 6,
-          description:
-            'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-          title: 'Pizza Marguerita',
-          image: pizza_marguerita,
-          prices: 60.9,
-          serves: [2, 3]
-        }
-      ]
-    },
-    {
-      id: 5,
-      title: 'La Dolce Vita Trattoria',
-      category: ['Italiana'],
-      rating: 4.6,
-      description:
-        'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
-      image: la_dolce_vita,
-      products: [
-        {
-          id: 1,
-          description:
-            'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-          title: 'Pizza Marguerita',
-          image: pizza_marguerita,
-          prices: 60.9,
-          serves: [2, 3]
-        },
-        {
-          id: 2,
-          description:
-            'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-          title: 'Pizza Marguerita',
-          image: pizza_marguerita,
-          prices: 60.9,
-          serves: [2, 3]
-        },
-        {
-          id: 3,
-          description:
-            'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-          title: 'Pizza Marguerita',
-          image: pizza_marguerita,
-          prices: 60.9,
-          serves: [2, 3]
-        },
-        {
-          id: 4,
-          description:
-            'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-          title: 'Pizza Marguerita',
-          image: pizza_marguerita,
-          prices: 60.9,
-          serves: [2, 3]
-        },
-        {
-          id: 5,
-          description:
-            'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-          title: 'Pizza Marguerita',
-          image: pizza_marguerita,
-          prices: 60.9,
-          serves: [2, 3]
-        },
-        {
-          id: 6,
-          description:
-            'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-          title: 'Pizza Marguerita',
-          image: pizza_marguerita,
-          prices: 60.9,
-          serves: [2, 3]
-        }
-      ]
-    },
-    {
-      id: 6,
-      title: 'La Dolce Vita Trattoria',
-      category: ['Italiana'],
-      rating: 4.6,
-      description:
-        'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
-      image: la_dolce_vita,
-      products: [
-        {
-          id: 1,
-          description:
-            'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-          title: 'Pizza Marguerita',
-          image: pizza_marguerita,
-          prices: 60.9,
-          serves: [2, 3]
-        },
-        {
-          id: 2,
-          description:
-            'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-          title: 'Pizza Marguerita',
-          image: pizza_marguerita,
-          prices: 60.9,
-          serves: [2, 3]
-        },
-        {
-          id: 3,
-          description:
-            'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-          title: 'Pizza Marguerita',
-          image: pizza_marguerita,
-          prices: 60.9,
-          serves: [2, 3]
-        },
-        {
-          id: 4,
-          description:
-            'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-          title: 'Pizza Marguerita',
-          image: pizza_marguerita,
-          prices: 60.9,
-          serves: [2, 3]
-        },
-        {
-          id: 5,
-          description:
-            'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-          title: 'Pizza Marguerita',
-          image: pizza_marguerita,
-          prices: 60.9,
-          serves: [2, 3]
-        },
-        {
-          id: 6,
-          description:
-            'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-          title: 'Pizza Marguerita',
-          image: pizza_marguerita,
-          prices: 60.9,
-          serves: [2, 3]
-        }
-      ]
-    }
-  ]
+  itens: []
 }
+
+export const fetchRestaurants = createAsyncThunk(
+  'restaurants/fetchRestaurants',
+  async () => {
+    const response = await fetch(
+      'https://fake-api-tau.vercel.app/api/efood/restaurantes'
+    )
+    const data = await response.json()
+    return data
+  }
+)
 
 const RestaurantsSlice = createSlice({
   name: 'restaurants',
   initialState,
-  reducers: {}
+  reducers: {},
+  extraReducers: (builder) => {
+    builder.addCase(fetchRestaurants.fulfilled, (state, action) => {
+      state.itens = action.payload
+    })
+  }
 })
 
 export default RestaurantsSlice.reducer

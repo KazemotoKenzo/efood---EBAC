@@ -6,17 +6,17 @@ import {
 } from './styles'
 
 type Props = {
-  title: string
-  description: string
-  image: string
+  nome: string
+  descricao: string
+  foto: string
 }
 
-const ProductItem = ({ image, title, description }: Props) => {
+const ProductItem = ({ foto, nome, descricao }: Props) => {
   return (
     <>
-      <ProductImage src={image} />
-      <ProductTitle>{title}</ProductTitle>
-      <ProductDescription>{description}</ProductDescription>
+      <ProductImage src={foto} />
+      <ProductTitle>{nome}</ProductTitle>
+      <ProductDescription>{descricao}</ProductDescription>
       <AddProduct>Adicionar ao carrinho</AddProduct>
     </>
   )

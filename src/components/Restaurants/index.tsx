@@ -15,13 +15,12 @@ const Restaurants = () => {
           {itens.map((r) => (
             <RestaurantItem
               key={r.id}
-              title={r.title}
-              category={r.category}
-              description={r.description}
-              image={r.image}
-              rating={r.rating}
+              title={r.titulo}
+              category={r.tipo}
+              description={r.descricao}
+              image={r.capa}
+              rating={r.avaliacao}
               id={r.id}
-              products={r.products}
             />
           ))}
         </RestList>

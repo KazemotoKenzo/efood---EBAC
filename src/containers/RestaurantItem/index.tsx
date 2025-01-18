@@ -1,5 +1,3 @@
-import RestaurantModel from '../../models/RestaurantModel'
-
 import {
   Categories,
   Category,
@@ -13,7 +11,14 @@ import {
   Image
 } from './styles'
 
-type Props = RestaurantModel
+type Props = {
+  id: number
+  title: string
+  category: string
+  description: string
+  image: string
+  rating: number
+}
 
 const RestaurantItem = ({
   id,
@@ -34,9 +39,7 @@ const RestaurantItem = ({
   return (
     <Card>
       <Categories>
-        {category.map((c) => (
-          <Category key={c}>{c}</Category>
-        ))}
+        <Category>{category}</Category>
       </Categories>
       <Image src={image} alt={title} />
       <ContainerRes>

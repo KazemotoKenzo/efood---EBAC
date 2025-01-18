@@ -1,10 +1,10 @@
 import { Provider } from 'react-redux'
 import { store } from './store'
 import Rotas from './routes'
+import { BrowserRouter } from 'react-router-dom'
 
 import GlobalCSS from './styles'
 import Footer from './containers/Footer'
-import { BrowserRouter } from 'react-router-dom'
 
 function App() {
   return (

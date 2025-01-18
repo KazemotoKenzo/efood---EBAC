@@ -1,4 +1,3 @@
-import ProductModel from '../../models/ProductModel'
 import { useState } from 'react'
 
 import ProductItem from '../../containers/ProductItem'
@@ -6,37 +5,50 @@ import Container from '../../styles/container'
 import { Modal, ProductList, RestaurantSection, ModalContent } from './styles'
 
 import close from '../../assets/images/close 1.png'
-import { useDispatch } from 'react-redux'
-import { add } from '../../store/reducers/cart'
 
 type Props = {
-  product: ProductModel[]
+  cardapio: [
+    {
+      foto: string
+      preco: number
+      id: number
+      nome: string
+      descricao: string
+      porcao: string
+    }
+  ]
 }
 
-interface ModalState extends ProductModel {
+type ModalState = {
+  foto: string
+  preco: number
+  id: number
+  nome: string
+  descricao: string
+  porcao: string
   isVisible: boolean
 }
 
-const RestaurantPage = ({ product }: Props) => {
+const RestaurantPage = ({ cardapio }: Props) => {
   const [modal, setModal] = useState<ModalState>({
     isVisible: false,
-    description: '',
+    descricao: '',
     id: 0,
-    image: '',
-    title: '',
-    prices: 0,
-    serves: [0]
+    foto: '',
+    nome: '',
+    preco: 0,
+    porcao: ''
   })
 
   const closeModal = () => {
     setModal({
       isVisible: false,
-      description: '',
-      image: '',
-      title: '',
+      descricao: '',
+      foto: '',
+      nome: '',
       id: 0,
-      prices: 0,
-      serves: [0]
+      preco: 0,
+      porcao: ''
     })
   }
 
@@ -44,41 +56,39 @@ const RestaurantPage = ({ product }: Props) => {
     return new Intl.NumberFormat('pt-BR', {
       style: 'currency',
       currency: 'BRL'
-    }).format(modal.prices)
+    }).format(modal.preco)
   }
 
   const family = () => {
-    return modal.serves.length > 1
-      ? `de ${modal.serves[0]} a ${modal.serves[1]} pessoas`
+    return modal.porcao.length > 1
+      ? `de ${modal.porcao[0]} a ${modal.porcao[1]} pessoas`
       : `1 pessoa`
   }
-
-  const dispatch = useDispatch()
 
   return (
     <>
       <RestaurantSection>
         <Container>
           <ProductList>
-            {product.map((p) => (
+            {cardapio.map((p) => (
               <li
                 key={p.id}
                 onClick={() => {
                   setModal({
                     isVisible: true,
-                    description: p.description,
-                    image: p.image,
-                    title: p.title,
+                    descricao: p.descricao,
+                    foto: p.foto,
+                    nome: p.nome,
                     id: p.id,
-                    prices: p.prices,
-                    serves: p.serves
+                    preco: p.preco,
+                    porcao: p.porcao
                   })
                 }}
               >
                 <ProductItem
-                  title={p.title}
-                  description={p.description}
-                  image={p.image}
+                  nome={p.nome}
+                  descricao={p.descricao}
+                  foto={p.foto}
                 />
               </li>
             ))}
@@ -92,15 +102,14 @@ const RestaurantPage = ({ product }: Props) => {
             <img src={close} onClick={closeModal} alt="Fechar" />
           </header>
           <div>
-            <img src={modal.image} alt="Pizza Marguerita" />
+            <img src={modal.foto} alt="Pizza Marguerita" />
             <div>
-              <h4>{modal.title}</h4>
-              <p>{modal.description}</p>
+              <h4>{modal.nome}</h4>
+              <p>{modal.descricao}</p>
 
               <span>Serve: {family()}</span>
               <button
                 onClick={() => {
-                  dispatch(add(modal))
                   closeModal()
                 }}
               >
