@@ -1,10 +1,10 @@
 import { useSelector } from 'react-redux'
 import { RootReducer } from '../store'
+import { useParams } from 'react-router-dom'
 
 import Header from '../containers/Header'
 import RestaurantPage from '../components/RestaurantPage'
 import Banner from '../components/Banner'
-import { useParams } from 'react-router-dom'
 
 const Profile = () => {
   const { id } = useParams<{ id: string }>()
