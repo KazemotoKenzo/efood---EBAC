@@ -1,6 +1,6 @@
 import { RootReducer } from '../../store'
 import { useDispatch, useSelector } from 'react-redux'
-import { reset } from '../../store/reducers/cart'
+import { open } from '../../store/reducers/cart'
 
 import Logo from '../../styles/logo'
 import { HeaderBar, HeaderContainer, Left, Right } from './styles'
@@ -11,14 +11,16 @@ const Header = () => {
   const itens = useSelector((state: RootReducer) => state.cart.itens)
   const dispatch = useDispatch()
 
+  const openCart = () => {
+    dispatch(open())
+  }
+
   return (
     <HeaderBar>
       <HeaderContainer>
-        <Left onClick={() => dispatch(reset())} to="/">
-          Retaurantes
-        </Left>
+        <Left to="/">Retaurantes</Left>
         <Logo src={logo} />
-        <Right to="#">{itens.length} produto(s) no carrinho</Right>
+        <Right onClick={openCart}>{itens.length} produto(s) no carrinho</Right>
       </HeaderContainer>
     </HeaderBar>
   )

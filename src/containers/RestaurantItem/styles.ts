@@ -76,4 +76,5 @@ export const MoreLink = styled(Link)`
   padding: 4px 6px;
   display: inline-block;
   bottom: 0;
+  cursor: pointer;
 `

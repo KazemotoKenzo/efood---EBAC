@@ -24,4 +24,5 @@ export const AddProduct = styled.button`
   padding: 4px 0;
   font-weight: bold;
   font-size: 14px;
+  cursor: pointer;
 `
