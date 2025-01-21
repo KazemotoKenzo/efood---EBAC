@@ -4,9 +4,9 @@ import { useParams } from 'react-router-dom'
 import Header from '../containers/Header'
 import RestaurantPage from '../components/RestaurantPage'
 import Banner from '../components/Banner'
-import Cart from '../components/Cart'
 
 import { Loading } from '../styles/loading'
+import Modal from '../containers/Modal'
 
 const Profile = () => {
   const { id } = useParams<{ id: string }>()
@@ -29,7 +29,7 @@ const Profile = () => {
         titulo={restaurant.titulo}
       />
       <RestaurantPage cardapio={restaurant.cardapio} />
-      <Cart />
+      <Modal />
     </>
   )
 }
