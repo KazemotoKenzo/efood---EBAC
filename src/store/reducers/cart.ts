@@ -12,11 +12,13 @@ type Product = {
 type CartState = {
   itens: Product[]
   isOpen: boolean
+  currentStep: string
 }
 
 const initialState: CartState = {
   itens: [],
-  isOpen: false
+  isOpen: false,
+  currentStep: 'cart'
 }
 
 const cartSlice = createSlice({
@@ -36,12 +38,25 @@ const cartSlice = createSlice({
     },
     open: (state) => {
       state.isOpen = true
+      state.currentStep = 'cart'
+    },
+    clear: (state) => {
+      state.itens = []
     },
     close: (state) => {
       state.isOpen = false
+    },
+    nextStep: (state) => {
+      if (state.currentStep === 'cart') state.currentStep = 'checkout'
+      else if (state.currentStep === 'checkout') state.currentStep = 'payment'
+    },
+    prevStep: (state) => {
+      if (state.currentStep === 'checkout') state.currentStep = 'cart'
+      else if (state.currentStep === 'payment') state.currentStep = 'checkout'
     }
   }
 })
 
-export const { add, open, close, remove } = cartSlice.actions
+export const { add, open, close, remove, nextStep, prevStep, clear } =
+  cartSlice.actions
 export default cartSlice.reducer

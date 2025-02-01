@@ -1,10 +1,14 @@
 import styled from 'styled-components'
 
-export const Form = styled.form`
-  > div {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: auto;
+export const Form = styled.aside`
+  form {
+    > div {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      justify-content: space-between;
+      align-items: end;
+      gap: 30px;
+    }
   }
 `
 

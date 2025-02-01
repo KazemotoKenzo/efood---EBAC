@@ -74,6 +74,12 @@ export const CartContainer = styled.div`
       margin-bottom: 16px;
     }
 
+    p {
+      margin-bottom: 16px;
+      font-weight: 400;
+      line-height: 22px;
+    }
+
     label {
       display: block;
       margin-bottom: 8px;
@@ -85,6 +91,10 @@ export const CartContainer = styled.div`
       margin-bottom: 8px;
       background-color: ${colors._secundary};
       border: none;
+
+      &.error {
+        border: 3px solid red;
+      }
     }
   }
 `

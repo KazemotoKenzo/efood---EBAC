@@ -3,12 +3,12 @@ import { useGetRestaurantsQuery } from '../../services/api'
 import Container from '../../styles/container'
 import RestaurantItem from '../../containers/RestaurantItem'
 import { RestList, RestSection } from './styles'
-import { Loading } from '../../styles/loading'
+import Loader from '../../containers/Loader'
 
 const Restaurants = () => {
   const { data: restaurants, isLoading } = useGetRestaurantsQuery()
 
-  if (isLoading) return <Loading>Carregando...</Loading>
+  if (isLoading) return <Loader />
 
   return (
     <RestSection>

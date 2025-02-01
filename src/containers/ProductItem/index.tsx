@@ -13,8 +13,8 @@ type Props = {
 
 const ProductItem = ({ foto, nome, descricao }: Props) => {
   const getDescription = (d: string) => {
-    if (d.length > 227) {
-      return d.slice(0, 227) + '...'
+    if (d.length > 216) {
+      return d.slice(0, 216) + '...'
     } else {
       return d
     }

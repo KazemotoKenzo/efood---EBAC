@@ -9,7 +9,7 @@ export const ProductImage = styled.img`
 `
 
 export const ProductTitle = styled.h3`
-  margin-bottom: 8px;
+  margin: 8px 0;
 `
 
 export const ProductDescription = styled.p`

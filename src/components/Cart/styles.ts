@@ -3,7 +3,13 @@ import colors from '../../styles/colors'
 
 import trash from '../../assets/images/lixeira-de-reciclagem 1.png'
 
-export const CartAside = styled.aside``
+export const CartAside = styled.aside`
+  .empty-text {
+    font-size: 14px;
+    line-height: 22px;
+    text-align: center;
+  }
+`
 
 export const CartList = styled.ul`
   margin-bottom: 40px;
